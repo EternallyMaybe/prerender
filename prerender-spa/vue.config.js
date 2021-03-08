@@ -1,6 +1,7 @@
 const path = require('path');
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
+const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
 
 module.exports = {
     configureWebpack: config => {
@@ -19,6 +20,21 @@ module.exports = {
                         renderAfterDocumentEvent: 'render-event'
                     })
                 }),
+                new HtmlCriticalWebpackPlugin({
+                    base: path.join(__dirname, 'dist'),
+                    src: 'index.html',
+                    dest: 'index.html',
+                    target: {
+                        uncritical: 'uncritical.css',
+                    },
+                    inline: true,
+                    minify: true,
+                    width: 1400,
+                    height: 900,
+                    penthouse: {
+                        blockJSRequests: false
+                    }
+                })
             ]
         }
     }
