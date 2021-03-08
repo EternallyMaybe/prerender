@@ -1,0 +1,16 @@
+{
+  "name": "npm_pck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "critical": "^3.0.0",
+    "oust": "^1.0.4"
+  }
+}

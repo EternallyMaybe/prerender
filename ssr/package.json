@@ -1,0 +1,38 @@
+{
+  "name": "ssr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build:client": "cross-env WEBPACK_TARGET=web vue-cli-service build",
+    "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build",
+    "build": "npm run build:server && mv dist/vue-ssr-server-bundle.json bundle/ && npm run build:client && mv bundle/vue-ssr-server-bundle.json dist/",
+    "start": "node server"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "cross-env": "^7.0.3",
+    "i": "^0.3.6",
+    "koa": "^2.13.1",
+    "koa-static": "^5.0.0",
+    "null-loader": "^4.0.1",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vue-server-renderer": "^2.6.12",
+    "vuex": "^3.4.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "lodash.merge": "^4.6.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
