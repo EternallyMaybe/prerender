@@ -34,7 +34,6 @@ app.use(async (ctx, next) => {
   };
   // 将 context 数据渲染为 HTML
   const html = await renderToString(context);
-  console.log(html);
   ctx.body = html;
 });
 

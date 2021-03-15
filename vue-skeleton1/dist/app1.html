@@ -1,1 +1,67 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>vue-skeleton3</title><link href="/js/about.189abd4c.js" rel="prefetch"><link href="/css/app1.b00e02bd.css" rel="preload" as="style"><link href="/js/app1.c7b7e529.js" rel="preload" as="script"><link href="/js/chunk-vendors.1c0c9379.js" rel="preload" as="script"><link href="/css/app1.b00e02bd.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but vue-skeleton3 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/js/chunk-vendors.1c0c9379.js"></script><script src="/js/app1.c7b7e529.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>vue-skeleton3</title>
+    <style>
+      .skeleton[data-v-3647e45c] {
+        padding: 10px;
+        width: 100%;
+        color: #fff;
+        background-color: #666;
+      }
+
+      /*# sourceMappingURL=skeleton-app1.css.map*/
+    </style>
+    <link href="/js/about.b3cdaf9e.js" rel="prefetch" />
+    <link href="/css/app1.b00e02bd.css" rel="preload" as="style" />
+    <link href="/js/app1.a69e1850.js" rel="preload" as="script" />
+    <link href="/js/chunk-vendors.1c0c9379.js" rel="preload" as="script" />
+    <link href="/css/app1.b00e02bd.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <noscript
+      ><strong
+        >We're sorry but vue-skeleton3 doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      ></noscript
+    >
+    <div id="app">
+      <div data-server-rendered="true" class="skeleton" data-v-3647e45c>
+        <div id="skeletonId1" data-v-3647e45c>router1 skeleton</div>
+        <div id="skeletonId2" data-v-3647e45c>router2 skeleton</div>
+      </div>
+      <script>
+        var pathname = window.location.pathname,
+          hash = window.location.hash,
+          skeletons = [
+            { id: "skeletonId1", el: document.querySelector("#skeletonId1") },
+            { id: "skeletonId2", el: document.querySelector("#skeletonId2") },
+          ],
+          isMatched = function(e, t) {
+            return "hash" === t
+              ? e.test(hash.replace("#", ""))
+              : "history" === t && e.test(pathname);
+          },
+          showSkeleton = function(e) {
+            for (var t = 0; t < skeletons.length; t++) {
+              var o = skeletons[t];
+              e === o.id
+                ? (o.el.style = "display:block;")
+                : (o.el.style = "display:none;");
+            }
+          };
+        isMatched(/^\/router1(?:\/)?$/i, "hash")
+          ? showSkeleton("skeletonId1")
+          : isMatched(/^\/router2(?:\/)?$/i, "hash") &&
+            showSkeleton("skeletonId2");
+      </script>
+    </div>
+    <script src="/js/chunk-vendors.1c0c9379.js"></script>
+    <script src="/js/app1.a69e1850.js"></script>
+  </body>
+</html>

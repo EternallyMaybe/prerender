@@ -17,7 +17,8 @@ let vueConfig = {
         }
     },
     css: {
-        extract: TARGET_NODE ? true : false,
+        extract: isPro,
+        sourceMap: isPro,
     },
     chainWebpack: (config) => {
         // 关闭vue-loader中默认的服务器端渲染函数
@@ -44,7 +45,7 @@ let vueConfig = {
         }
 
         // 移除HTML文件
-        Object.keys(vueConfig.pages).forEach(function (key) {
+        isPro && Object.keys(vueConfig.pages).forEach(function (key) {
             config.plugins.delete('html-' + key);
             config.plugins.delete('preload-' + key);
             config.plugins.delete('prefetch-' + key);

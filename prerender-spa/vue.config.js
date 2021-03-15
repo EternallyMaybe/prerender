@@ -24,11 +24,9 @@ module.exports = {
                     base: path.join(__dirname, 'dist'),
                     src: 'index.html',
                     dest: 'index.html',
-                    target: {
-                        uncritical: 'uncritical.css',
-                    },
                     inline: true,
                     minify: true,
+                    extract: true,
                     width: 1400,
                     height: 900,
                     penthouse: {

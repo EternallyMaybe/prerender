@@ -15,18 +15,6 @@ export default (context) => {
                 })
             }
 
-            // Promise.all(matcherComponents.map((Component) => {
-            //     if (Component.extendOptions.asyncData) {
-            //         const result = Component.extendOptions.asyncData({
-            //             store,
-            //             route: router.currentRoute,
-            //             options: {},
-            //         })
-            //     }
-            // })).then(() => {
-            //     context.state = store.state;
-            //     resolve(app);
-            // }).catch(reject)
             resolve(app);
         }, reject)
     })

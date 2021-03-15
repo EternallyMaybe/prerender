@@ -1,0 +1,13 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#app {
+    background: red;
+}
+
+.main {
+    background: blue;
+}
