@@ -11,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "oust": "^1.0.4"
+  },
+  "dependencies": {
+    "postcss": "^8.3.5",
+    "postcss-discard": "^2.0.0"
   }
 }
